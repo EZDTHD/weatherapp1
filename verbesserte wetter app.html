@@ -945,7 +945,7 @@
     function getWeatherInfo(code, isDay = true) {
       const map = {
         0: { icon: isDay ? '☀️' : '🌙', desc: 'Klarer Himmel' },
-        1: { icon: isDay ? '🌤️' : '🌙', desc: 'Überwiegend klar' },
+        1: { icon: isDay ? '🌤️' : '🌙☁️', desc: 'Überwiegend klar' },
         2: { icon: '⛅', desc: 'Teilweise bewölkt' },
         3: { icon: '☁️', desc: 'Bedeckt' },
         45: { icon: '🌫️', desc: 'Nebel' },
