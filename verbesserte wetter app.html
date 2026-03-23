@@ -770,7 +770,7 @@
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <span class="logo-icon">☀️</span>
+        <span class="logo-icon" id="logoIcon">☀️</span>
         <span class="logo-text">WetterApp</span>
       </div>
       <div class="header-time" id="headerTime"></div>
@@ -922,6 +922,7 @@
     const retryBtn = $('retryBtn');
     const weatherContent = $('weatherContent');
     const headerTime = $('headerTime');
+    const logoIcon = $('logoIcon');
     const celsiusBtn = $('celsiusBtn');
     const fahrenheitBtn = $('fahrenheitBtn');
     const cityName = $('cityName');
@@ -945,9 +946,9 @@
     function getWeatherInfo(code, isDay = true) {
       const map = {
         0: { icon: isDay ? '☀️' : '🌙', desc: 'Klarer Himmel' },
-        1: { icon: isDay ? '🌤️' : '🌙☁️', desc: 'Überwiegend klar' },
-        2: { icon: '⛅', desc: 'Teilweise bewölkt' },
-        3: { icon: '☁️', desc: 'Bedeckt' },
+        1: { icon: isDay ? '🌤️' : '🌙', desc: 'Überwiegend klar' },
+        2: { icon: isDay ? '⛅' : '🌙', desc: 'Teilweise bewölkt' },
+        3: { icon: isDay ? '☁️' : '🌙', desc: 'Bedeckt' },
         45: { icon: '🌫️', desc: 'Nebel' },
         48: { icon: '🌫️', desc: 'Gefrierender Nebel' },
         51: { icon: '🌦️', desc: 'Leichter Nieselregen' },
@@ -960,7 +961,7 @@
         73: { icon: '❄️', desc: 'Schneefall' },
         75: { icon: '❄️', desc: 'Starker Schneefall' },
         77: { icon: '🌨️', desc: 'Schneekörner' },
-        80: { icon: '🌦️', desc: 'Leichte Regenschauer' },
+        80: { icon: '🌧️', desc: 'Leichte Regenschauer' },
         81: { icon: '🌧️', desc: 'Regenschauer' },
         82: { icon: '⛈️', desc: 'Starke Regenschauer' },
         85: { icon: '🌨️', desc: 'Schneeschauer' },
@@ -1202,7 +1203,6 @@
     retryBtn.addEventListener('click', () => { if (lastCityName) searchCity(lastCityName); });
     document.querySelectorAll('.city-chip').forEach(btn => btn.addEventListener('click', () => searchCity(btn.dataset.city)));
 
-    // Standardstadt
     searchCity('Soest');
   </script>
 </body>
