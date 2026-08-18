@@ -1,2 +1,3 @@
-# wetter-app-lukas-Tarek
-wetter website oder app fr
+weather app try 1 
+intership project 
+april 2025
